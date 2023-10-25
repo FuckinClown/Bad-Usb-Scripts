@@ -1,0 +1,32 @@
+REM Title: Spam Notifications
+REM Author: Fclown 
+REM Description: This payload is meant to spam USB notifications
+REM Target: ChromeOS (Tested on: Dell 3110)
+
+DELAY 1000
+CTRL N
+DELAY 1500
+STRING STRING chrome://usb-internals
+ENTER
+DELAY 2000
+TAB
+DELAY 50
+TAB
+DELAY 50
+REM USBs name to be spammed
+STRING Get Pranked
+DELAY 50
+TAB
+DELAY 50
+REM Serial number (not required)
+STRING 6969420
+DELAY 50
+TAB
+DELAY 50
+STRING https://example.com
+DELAY 50
+TAB
+DELAY 50
+
+ENTER
+REPEAT 100
