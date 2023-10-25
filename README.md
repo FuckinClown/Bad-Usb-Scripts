@@ -5,7 +5,7 @@ A collection of the bad usb scripts that I make or like
 
 ## Authors
 Anyone else that I take from will be listed here
-- [Me (Obviously)](https://www.github.com/octokatherine)
+- [Me (Obviously)](https://github.com/FuckinClown)
 
 
 ## FAQ
