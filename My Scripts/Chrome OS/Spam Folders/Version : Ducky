@@ -1,0 +1,29 @@
+REM Title: Bookmark Spam
+REM Author: FuckinClown
+REM Description: Adds alot of Bookmark folders
+REM Why Ctrl R? TABing afterwards shuffles through the bookmarks, this is just extra precausion
+
+DELAY 1000
+CTRL T
+DELAY 100
+STRING chrome://bookmarks
+ENTER
+DELAY 500
+
+REM Everying below you can copy+paste spam
+TAB
+DELAY 20
+ENTER
+DELAY 20
+DOWNARROW
+DELAY 20
+DOWNARROW
+DELAY 20
+ENTER
+DELAY 20
+STRING Get Pranked
+DELAY 20
+ENTER
+DELAY 20
+CTRL R
+DELAY 250
