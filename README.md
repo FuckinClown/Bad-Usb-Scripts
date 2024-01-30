@@ -2,6 +2,7 @@
 
 A collection of the bad usb scripts that I make or like
 
+if you like this, please star it so I know to add more stuff
 
 ## Authors
 Anyone else that I take from will be listed here
